@@ -66,5 +66,12 @@ function handleComplete(evt,comp) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1366px; height:768px; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
 	</div>
+	<script>
+    window.addEventListener("message", function (event) {
+        if (event.data === "getHeight") {
+            event.source.postMessage(document.body.scrollHeight, event.origin);
+        }
+    });
+</script>
 </body>
 </html>
